@@ -1,4 +1,4 @@
-export function countIncreasingDepths(depths: number[]): number {
+export function countIncreasingPairs(depths: number[]): number {
   return depths.reduce((acc, curr, idx, arr) => {
     if (idx === 0) return 0;
 

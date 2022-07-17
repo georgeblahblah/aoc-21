@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { countIncreasingDepths } from "./challenge";
+import { countIncreasingPairs } from "./challenge";
 
 function loadDepthData(): number[] {
   try {
@@ -17,7 +17,7 @@ function loadDepthData(): number[] {
 
 function main() {
   const depths = loadDepthData();
-  const result = countIncreasingDepths(depths);
+  const result = countIncreasingPairs(depths);
   return result;
 }
 
