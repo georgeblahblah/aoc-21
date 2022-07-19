@@ -1,5 +1,9 @@
 import { readFileSync } from "fs";
-import { countIncreasingPairs } from "./challenge";
+import {
+  countIncreasingPairs,
+  getSlidingWindows,
+  sumSlidingWindows,
+} from "./challenge";
 
 function loadDepthData(): number[] {
   try {
@@ -15,10 +19,19 @@ function loadDepthData(): number[] {
   }
 }
 
-function main() {
+function part1() {
   const depths = loadDepthData();
   const result = countIncreasingPairs(depths);
   return result;
 }
 
-console.log(main());
+function part2() {
+  const depths = loadDepthData();
+  const slidingWindows = getSlidingWindows(depths);
+  const summedWindows = sumSlidingWindows(slidingWindows);
+  const result = countIncreasingPairs(summedWindows);
+  return result;
+}
+
+console.log(part1());
+console.log(part2());
